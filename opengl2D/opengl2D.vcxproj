@@ -151,12 +151,15 @@
     <ClCompile Include="IndexBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shaderClass.cpp" />
+    <ClCompile Include="Square.cpp" />
     <ClCompile Include="VertexArrayObject.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBufferObject.h" />
     <ClInclude Include="shaderClass.h" />
+    <ClInclude Include="Square.h" />
+    <ClInclude Include="utils.h" />
     <ClInclude Include="VertexArrayObject.h" />
     <ClInclude Include="VertexBufferObject.h" />
   </ItemGroup>
