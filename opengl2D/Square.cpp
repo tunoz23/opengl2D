@@ -23,6 +23,18 @@ Square::Square(const GLuint _centerPosX, const GLuint _centerPosY, int width)
 		0, 1, 2,  // First triangle (top-left, top-right, bottom-left)
 		1, 2, 3   // Second triangle (top-right, bottom-left, bottom-right)
 	};
+	vao.bind();
+	this->vbo = VertexBufferObject(this->vertices);
+	this->ebo = IndexBufferObject(this->indices);
+	vao.linkVBO(vbo.value(), 0);
+	vao.unBind();
+	ebo.value().unBind();
+}
+
+void Square::draw()
+{
+	vao.bind();
+	glDrawElements(GL_TRIANGLES, this->indices.size(), GL_UNSIGNED_INT, 0);
 
 }
 
@@ -46,5 +58,13 @@ Square::Square(const GLfloat _centerPosX, const GLfloat _centerPosY, int width)
 		0, 1, 2,  // First triangle (top-left, top-right, bottom-left)
 		1, 2, 3   // Second triangle (top-right, bottom-left, bottom-right)
 	};
+	
+	vao.bind();
+	this->vbo = VertexBufferObject(this->vertices);
+	this->ebo = IndexBufferObject(this->indices);
+	vao.linkVBO(vbo.value(), 0);
+	vao.unBind();
+	ebo.value().unBind();
+
 
 }
