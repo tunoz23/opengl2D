@@ -7,10 +7,10 @@ VertexArrayObject::VertexArrayObject()
 
 }
 
-void VertexArrayObject::linkVBO(const VertexBufferObject& vbo, GLuint layout)
+void VertexArrayObject::linkAttrib(const VertexBufferObject vbo, GLuint layout, GLuint numComponents, GLenum type, GLsizeiptr stride, void* offset)
 {
 	vbo.bind();
-	glVertexAttribPointer(layout, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), nullptr);
+	glVertexAttribPointer(layout, numComponents, type, GL_FALSE, stride, offset);
 	glEnableVertexAttribArray(layout);
 	vbo.unBind();
 }
